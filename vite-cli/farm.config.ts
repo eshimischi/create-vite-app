@@ -1,9 +1,7 @@
-import { builtinModules } from 'module';
-import path from "node:path"
-/**
- * @type {import('@farmfe/core').UserConfig}
- */
-export default {
+import { defineConfig } from '@farmfe/core'
+import path from 'node:path'
+
+export default defineConfig({
   compilation: {
     input: {
       index: './src/index.ts'
@@ -16,27 +14,12 @@ export default {
     },
     resolve: {
       alias: {
-        '@': path.resolve(process.cwd(), 'src')
+        '@': path.resolve('src')
       }
     },
-    external: [
-      ...builtinModules.map((m) => `^${m}$`),
-      ...builtinModules.map((m) => `^node:${m}$`),
-      'prettier'
-    ],
-    partialBundling: {
-      moduleBuckets: [
-        {
-          name: 'node.bundle.js',
-          test: ['.+']
-        }
-      ]
-    },
+    external: ['prettier'],
     minify: false,
     sourcemap: false,
     presetEnv: false
-  },
-  server: {
-    hmr: false
   }
-};
+})

@@ -1,5 +1,5 @@
 {
-  "name": "vite-cli",
+  "name": "template",
   "version": "0.23.12",
   "private": true,
   "workspaces": [
@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.3.0",
-    "@farmfe/cli": "^0.5.2",
-    "@farmfe/core": "^0.14.0",
+    "@farmfe/cli": "nightly",
+    "@farmfe/core": "nightly",
     "@types/fs-extra": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
